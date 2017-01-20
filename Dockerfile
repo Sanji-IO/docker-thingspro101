@@ -6,7 +6,7 @@ ENV GENERATOR_VERSION=${GENERATOR_VERSION:-latest}
 
 RUN apt-get update && \
 	apt-get install -y \
-		curl git-core build-essential python \
+		vim curl git-core build-essential python \
 		python-dev sshpass rsync sshfs && \
 	rm -rf /var/lib/apt/lists/*
 
