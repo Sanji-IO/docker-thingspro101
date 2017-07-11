@@ -1,7 +1,6 @@
 FROM ubuntu:16.04
 
 ENV NODE_INSTALL_VERSION=${NODE_INSTALL_VERSION:-v6}
-ENV NPM_VERSION=${NPM_VERSION:-latest}
 ENV GENERATOR_VERSION=${GENERATOR_VERSION:-latest}
 
 RUN apt-get update && \
@@ -27,7 +26,6 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.32.0/install.sh | b
 	nvm install $NODE_INSTALL_VERSION && \
 	nvm use $NODE_INSTALL_VERSION && \
 	nvm alias default $NODE_INSTALL_VERSION && \
-	npm install -g npm@$NPM_VERSION && \
 	npm install -g yo generator-sanji-ui@$GENERATOR_VERSION
 
 RUN virtualenv /home/moxa/pyenv && \
